@@ -1,0 +1,29 @@
+name: Terraform Security Scan
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    name: Terraform Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Run Trivy vulnerability scanner in IaC mode
+        uses: aquasecurity/trivy-action@0.35.0
+        with:
+          scan-type: 'config'
+          hide-progress: true
+          format: 'table'
+          exit-code: '0' # Set to '1' if you want the build to fail on findings
+          severity: 'CRITICAL,HIGH'
+
+      # Optional: Post results as a PR comment (similar to your old tfsec workflow)
+      # This requires the 'sarif' format above and a separate upload step.
