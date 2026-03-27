@@ -14,7 +14,7 @@ terraform {
       source  = "hashicorp/kubernetes"
     }
     time = {
-      version = "0.12.1"
+      version = "0.13.1"
       source  = "hashicorp/time"
     }
     tls = {
