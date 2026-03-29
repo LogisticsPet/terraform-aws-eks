@@ -21,3 +21,8 @@ output "cluster_ca" {
   description = "Base64 encoded cluster CA."
   value       = module.eks.cluster_certificate_authority_data
 }
+
+output "node_iam_role_name" {
+  description = "Name of the EC2 node IAM role created by Auto Mode."
+  value       = module.eks.node_iam_role_name
+}
