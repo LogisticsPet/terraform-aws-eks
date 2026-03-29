@@ -10,12 +10,12 @@ module "eks" {
 
   cluster_compute_config = {
     enabled    = true
-    node_pools = ["default-general-purpose"]
+    node_pools = ["general-purpose"]
   }
 
   vpc_id                   = var.vpc_id
   subnet_ids               = var.private_subnet_ids
-  control_plane_subnet_ids = var.intra_subnet_ids
+  # control_plane_subnet_ids = var.intra_subnet_ids
 
   tags = var.tags
 }
