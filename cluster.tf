@@ -34,6 +34,12 @@ resource "aws_ec2_tag" "private_subnet_karpenter" {
   value       = module.eks.cluster_name
 }
 
+resource "aws_ec2_tag" "cluster_sg_karpenter" {
+  resource_id = module.eks.cluster_security_group_id
+  key         = "karpenter.sh/discovery"
+  value       = module.eks.cluster_name
+}
+
 resource "aws_ec2_tag" "public_subnet_elb" {
   for_each    = toset(var.public_subnet_ids)
   resource_id = each.key
