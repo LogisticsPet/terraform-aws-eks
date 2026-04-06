@@ -94,7 +94,7 @@
                 "iam:PassRole",
                 "iam:DetachRolePolicy",
                 "iam:ListInstanceProfilesForRole",
-                "iam:RemoveRoleFromInstanceProfile"
+                "iam:RemoveRoleFromInstanceProfile",
                 "iam:DeleteRolePolicy",
                 "iam:DeleteRole"
             ],
