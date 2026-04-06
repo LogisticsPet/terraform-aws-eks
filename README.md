@@ -109,6 +109,7 @@ The following IAM policy needs to be attached to the role that is assumed during
                 "iam:PassRole",
                 "iam:DetachRolePolicy",
                 "iam:ListInstanceProfilesForRole",
+                "iam:RemoveRoleFromInstanceProfile",
                 "iam:DeleteRolePolicy",
                 "iam:DeleteRole"
             ],
